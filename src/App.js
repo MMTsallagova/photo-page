@@ -53,19 +53,21 @@ function App() {
                 aboutMeText={textContent.downtext.subtitle}
                 aboutMeContacts={textContent.downtext.contacts}
             />
-            <div
-                className={`pop-up-overlay ${popUp ? 'visible' : 'hide'}`}
-                onClick={() => setPopUp('')}
-            >
+
+            {popUp !== '' &&
                 <div
-                    className="pop-up-box"
-                    onClick={(e) => e.stopPropagation()}
+                    className={`pop-up-overlay visible`}
+                    onClick={() => setPopUp('')}
                 >
-                    <PhotoSlider collection={collection}/>
+                    <div
+                        className="pop-up-box"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <PhotoSlider collection={collection}/>
+                    </div>
+
                 </div>
-
-            </div>
-
+            }
         </div>
     );
 }

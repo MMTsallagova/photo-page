@@ -11,7 +11,7 @@ const PhotoSlider = ({collection}) => {
         autoplay: true,
         autoplaySpeed: 3000,
         fade: true,
-        initialSlide: 2,
+        initialSlide: 0,
     };
 
     return (
